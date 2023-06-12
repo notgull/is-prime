@@ -51,6 +51,7 @@ pub fn is_prime(n: u64) -> bool {
         executor
             .spawn(async move {
                 let rt = tokio::runtime::Builder::new_current_thread()
+                    .enable_all()
                     .build()
                     .expect("Failed to build runtime");
                 let _e = rt.enter();
@@ -65,7 +66,7 @@ pub fn is_prime(n: u64) -> bool {
             .detach();
     }
 
-    smol::block_on(executor.run(smol::Timer::after(Duration::from_secs(5))));
+    smol::block_on(executor.run(smol::Timer::after(Duration::from_micros(1))));
 
     executor.is_empty()
 }
