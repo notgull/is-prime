@@ -4,7 +4,7 @@ version = "0.1.0"
 edition = "2021"
 description = "A simple crate to check if a number is prime"
 repository = "https://github.com/notgull/is-prime"
-license = "MIT OR BSL-1.0 OR Apache-2.0 OR BSD-2-Clause OR BSD-3-Clause OR BSD-0-Clause OR GPL-v3.0-only OR ISC OR WTFPL or Zlib"
+license = "MIT"
 
 [dependencies]
 criterion = { version = "0.5.1", features = ["tokio", "smol"] }
