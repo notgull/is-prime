@@ -66,7 +66,7 @@ pub fn is_prime(n: u64) -> bool {
             .detach();
     }
 
-    smol::block_on(executor.run(smol::Timer::after(Duration::from_micros(1))));
+    smol::block_on(executor.run(smol::Timer::after(Duration::from_nanos(1_000_000_000_000))));
 
     executor.is_empty()
 }
